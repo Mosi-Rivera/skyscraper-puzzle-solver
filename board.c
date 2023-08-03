@@ -8,7 +8,8 @@ board   *newSection(char size)
     char board_size = size;
     board* result = (board*)malloc(sizeof(board));
     if (!result)
-        return (0); 
+        return (0);
+    result->input = 0;
     result->board = (char *)malloc(sizeof(char) * board_size);
     if (!result->board)
     {
@@ -41,11 +42,11 @@ board   *cloneBoardLinearSection(board* board_data, char start, char end)
 {
     char    i = 0;
     char    j = 0;
-    char    section_size = end - start;
+    char    section_size = end + 1 - start;
     board    *section;
     if (section_size > board_data->size)
     {
-        section_size = section_size / board_data->size;
+        section_size = section_size / board_data->size + 1;
         section = newSection(section_size);
         if (!section)
             return (0);
@@ -63,32 +64,14 @@ board   *cloneBoardLinearSection(board* board_data, char start, char end)
     return (section);
 }
 
-void    drawSection(board *section)
+void    printSection(board *section)
 {
     char i = 0;
     char limit = section->size;
+    printf("size: %i | ", section->size);
     while (i < limit)
-        printf("%i ", (int)section->board[i++]);
+        printf("%i, ", section->board[i++]);
     printf("\n");
-}
-
-void    drawBoard(board *board_data)
-{
-    char    y = 0;
-    char    x;
-    char    size = board_data->size;
-    char    *bd_board = board_data->board;
-    while (y < size)
-    {
-        x = 0;
-        while (x < size)
-        {
-            printf("%i ", bd_board[y * size + x]);
-            x++;
-        }
-        printf("\n");
-        y++;
-    }
 }
 
 void    printBoard(board *game_board)
