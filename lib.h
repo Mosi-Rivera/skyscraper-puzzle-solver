@@ -17,9 +17,10 @@ typedef struct s_board
 
 board    *isValidInput(int length, char* input);
 board   *newBoard(char size);
+board   *newSection(char size);
 board   *cloneBoardLinearSection(board* board_data, char start, char end);
 void    printSection(board *section);
-void    printBoard(board *game_board);
+void    printBoard(board *game_board, char print_input);
 void    printInput(t_input *parsed_input);
 void    freeBoard(board *game_board);
 char    solve(board *board_game);

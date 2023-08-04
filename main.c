@@ -21,12 +21,11 @@ int main(int argc, char** argv)
     }
     if (solve(game_board))
     {
-        printBoard(game_board);
+        printBoard(game_board, 0);
     }
     else {
         printf("Puzzle can not be solved.");
     }
-    // printBoard(game_board);
     freeBoard(game_board);
     return (0);
 }

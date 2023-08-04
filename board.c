@@ -74,13 +74,13 @@ void    printSection(board *section)
     printf("\n");
 }
 
-void    printBoard(board *game_board)
+void    printBoard(board *game_board, char print_input)
 {
     int x;
     int y = 0;
     int size = game_board->size;
-    printInput(game_board->input);
-    printf("\n");
+    if (print_input)
+        printInput(game_board->input);
     while (y < size)
     {
         x = 0;
