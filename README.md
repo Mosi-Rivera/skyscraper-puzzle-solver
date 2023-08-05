@@ -25,11 +25,12 @@ The next 4 lines should contain the clues.
 Finally the remaining lines should be the cells.
 Empty clues or cells should be represented by 0.
 
-![puzzle example](./assets/complete_puzzle_example.png)
+![puzzle example](./assets/incomplete_puzzle_example.png)
 
 Example:
 
-```4
+```
+4
 0000
 0003
 0003
@@ -37,7 +38,8 @@ Example:
 0000
 0400
 0000
-0001```
+0001
+```
 
 ```
 4    <- puzzle size
