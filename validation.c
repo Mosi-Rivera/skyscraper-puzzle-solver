@@ -26,7 +26,7 @@ t_input    *newParsedInput(char size)
     if (!result)
         return (0);
     result->size = size;
-    result->input = (char*)malloc(sizeof(char));
+    result->input = (char*)malloc(sizeof(char) * size);
     if (!result->input)
     {
         free(result);

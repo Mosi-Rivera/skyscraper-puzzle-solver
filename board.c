@@ -80,7 +80,10 @@ void    printBoard(board *game_board, char print_input)
     int y = 0;
     int size = game_board->size;
     if (print_input)
+    {
         printInput(game_board->input);
+        printf("\n");
+    }
     while (y < size)
     {
         x = 0;

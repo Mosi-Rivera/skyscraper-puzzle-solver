@@ -11,9 +11,17 @@ int inputLen(char *str)
 int main(int argc, char** argv)
 {
     if (argc <= 1)
+    {
+        printf("Please provide input.");
         return (1);
+    }
     char    *input = argv[1];
-    board *game_board = isValidInput(inputLen(input), input);
+    board   *game_board;
+    int len = inputLen(input);
+    if (len == 1)
+        game_board = parseFile(input);
+    else
+        game_board = isValidInput(inputLen(input), input);
     if (!game_board)
     {
         printf("Please provide valid input.");

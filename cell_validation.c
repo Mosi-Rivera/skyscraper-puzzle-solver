@@ -29,35 +29,41 @@ char    isValidRow(char clue_1, char clue_2, board *row)
     char index = 0;
     char size = row->size;
     char current;
-    while (index < size)
+    if (clue_1 != 0)
     {
-        current = row->board[index++];
-        if (current > tallest)
+        while (index < size)
         {
-            count++;
-            tallest = current;
-            if (current == size)
-                break;
+            current = row->board[index++];
+            if (current > tallest)
+            {
+                count++;
+                tallest = current;
+                if (current == size)
+                    break;
+            }
         }
+        if (count != clue_1)
+            return (0);
     }
-    index = row->size;
-    if (count != clue_1)
-        return (0);
-    count = 0;
-    tallest = 0;
-    while (index--)
+    if (clue_2 != 0)
     {
-        current = row->board[index];
-        if (current > tallest)
+        index = row->size;
+        count = 0;
+        tallest = 0;
+        while (index--)
         {
-            count++;
-            tallest = current;
-            if (current == size)
-                break;
+            current = row->board[index];
+            if (current > tallest)
+            {
+                count++;
+                tallest = current;
+                if (current == size)
+                    break;
+            }
         }
+        if (count != clue_2)
+            return (0);
     }
-    if (count != clue_2)
-        return (0);
     return (1);
 }
 

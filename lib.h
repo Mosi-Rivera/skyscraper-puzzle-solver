@@ -25,5 +25,7 @@ void    printInput(t_input *parsed_input);
 void    freeBoard(board *game_board);
 char    solve(board *board_game);
 char    isSolvable(board *game_board, char x, char y, char value);
+board   *parseFile(char *src);
+t_input *newParsedInput(char size);
 
 #endif
