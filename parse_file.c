@@ -51,7 +51,7 @@ char    parseDataBoard(board *game_board, char *data)
     char    current;
     char    size = game_board->size;
     char    len = size * size - 1;
-    while (i < size)
+    while (i < size && *data)
     {
         current = *data++;
         if (current == '\n')
@@ -69,6 +69,9 @@ char    parseDataBoard(board *game_board, char *data)
         else
             return (0);
     }
+    printf("%i | %i\n", j, len);
+    if (j <= len)
+        return (0);
     return (1);
 }
 
@@ -90,8 +93,7 @@ board   *createBoardFromData(char *data, char size)
         freeBoard(game_board);
         return (0);
     }
-    parseDataBoard(game_board, board_data);
-    if (!board_data)
+    if (!parseDataBoard(game_board, board_data))
     {
         freeBoard(game_board);
         return (0);
