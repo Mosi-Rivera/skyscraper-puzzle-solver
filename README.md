@@ -20,10 +20,10 @@ Clues should be written in clockwise order from left to right.
 ## Incomplete Clues
 
 To solve a puzzle with incomplete info create a text file.
-The first line should be the size of the puzzle.
-The next 4 lines should contain the clues.
-Finally the remaining lines should be the cells.
-Empty clues or cells should be represented by 0.
+* The first line should be the size of the puzzle.
+* The next 4 lines should contain the clues.
+* Finally the remaining lines should be the cells.
+* Empty clues or cells should be represented by 0.
 
 ![puzzle example](./assets/incomplete_puzzle_example.png)
 
