@@ -27,7 +27,7 @@ Empty clues or cells should be represented by 0.
 
 ![puzzle example](./assets/incomplete_puzzle_example.png)
 
-Example:
+Example: example.txt
 
 ```
 4
@@ -48,11 +48,11 @@ Example:
 0003 <- clues bottom
 0000 <- clues right
 0000 <- board cell row 1
-0400 <- board cell row 1
-0000 <- board cell row 1
-0001 <- board cell row 1
+0400 <- board cell row 2
+0000 <- board cell row 3
+0001 <- board cell row 4
 ```
 
 ```
-./board.exe [path_to_file]
+./board.exe "example.txt"
 ```
